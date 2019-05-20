@@ -27,5 +27,13 @@ class ImageFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_image, container, false)
     }
 
-
+    companion object {
+        fun newInstance(imageResourceId: Int) : ImageFragment{
+            val bundle = Bundle()
+            bundle.putInt(IMG_RES_ID, imageResourceId)
+            val imageFragment = ImageFragment()
+            imageFragment.arguments = bundle
+            return imageFragment
+        }
+    }
 }
